@@ -14,4 +14,9 @@ public class DataCheckerTesting {
     public void testMonth() {
         assertTrue(datachecker.has31(DataChecker.Month.JANUARY));
     }
+
+    @Test
+    public void testMonthWithout31Days() {
+        assertFalse(datachecker.has31(DataChecker.Month.NOVEMBER));
+    }
 }
