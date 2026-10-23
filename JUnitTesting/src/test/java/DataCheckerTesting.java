@@ -31,5 +31,10 @@ public class DataCheckerTesting {
         assertTrue(datachecker.has31(month));
     }
 
+    @Test
+    public void edgeCase() {
+        assertFalse(datachecker.has31(DataChecker.Month.FEBRUARY));
+    }
+
 
 }

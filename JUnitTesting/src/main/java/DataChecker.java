@@ -16,6 +16,9 @@ public class DataChecker {
     }
 
     public boolean has31(Month month) {
+        if (month == null) {
+            throw new IllegalArgumentException("Invalid Month.");
+        }
         switch (month) {
             case JANUARY:
             case MARCH:
@@ -30,6 +33,7 @@ public class DataChecker {
             case JUNE:
             case SEPTEMBER:
             case NOVEMBER:
+            case FEBRUARY:
                 return false;
         }
         return false;
