@@ -43,5 +43,33 @@ public class DataCheckerTesting {
         });
     }
 
+    @ParameterizedTest
+    @EnumSource (
+            value = DataChecker.Month.class,
+            names = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"}
+    )
+    public void testAllMonths(DataChecker.Month month) {
+        boolean expectedResult;
+        switch (month) {
+            case JANUARY:
+            case MARCH:
+            case MAY:
+            case JULY:
+            case AUGUST:
+            case OCTOBER:
+            case DECEMBER:
+                expectedResult = true;
+                break;
+            default:
+                expectedResult = false;
+                break;
+
+        }
+        assertEquals(expectedResult, datachecker.has31(month));
+        assertThrows(IllegalArgumentException.class, () -> {
+            datachecker.has31(null);
+        });
+    }
+
 
 }
