@@ -36,5 +36,12 @@ public class DataCheckerTesting {
         assertFalse(datachecker.has31(DataChecker.Month.FEBRUARY));
     }
 
+    @Test
+    public void testNull() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            datachecker.has31(null);
+        });
+    }
+
 
 }
