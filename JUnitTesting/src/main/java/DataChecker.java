@@ -16,7 +16,7 @@ public class DataChecker {
     }
 
     public boolean has31(Month month) {
-        return false;
+        return true;
     }
 
 }
